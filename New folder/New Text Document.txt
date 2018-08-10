@@ -1,0 +1,3 @@
+
+create table table1(stat varchar(20), colorcode varchar(20), colorid varchar(20));
+select * from table1;

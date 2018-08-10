@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <!--Navbar-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+  <script type="text/javascript">
+    var frm = $('register_form');
+
+    frm.submit(function (e) {
+
+      e.preventDefault();
+
+      $.ajax({
+        type: frm.attr('method'),
+        url: frm.attr('action'),
+        data: frm.serialize(),
+        success: function (data) {
+          console.log('Submission was successful.');
+          console.log(data);
+        },
+        error: function (data) {
+          console.log('An error occurred.');
+          console.log(data);
+        },
+      });
+    });
+  </script>
+
+
+  <nav class="navbar " style='background-color: #42a5f5;'>
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">WebSiteName</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li>
+          <a href="#">Home</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a href="/logincustomer">
+            <li><i class="large material-icons">add_shopping_cart</i></li>
+                <li><a href="#"> Shop</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            <span class="glyphicon glyphicon-log-in"></span> Login</a>
+        </li>
+        <li>
+          <a href="#">
+            <span></span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+
+</head>
+
+
+<!--<body background="https://preview.ibb.co/nccLTT/Chrysanthemum.jpg" > -->
+
+<body>
+  <h4 align="center">Sign Up</h4>
+  <div align="center" class="col-md-4 mid-side-home-outer"></div>
+  <div class="container panel panel-default " style="width: 500px;   ">
+
+    <!--<%= typeof msg != 'undefined'?msg:'' %>-->
+    <form action="/register" method="POST" id='register_form'>
+      <div class="file-field input-field">
+        <div class="form-group">
+          <!--<div class="btn grey">
+                <span></span>
+                <input name="image" type="file">
+              </div>
+              <div class="file-path-wrapper">
+                <input class="file-path validate" type="text">
+              </div>
+            </div>
+            <button type="submit" class="btn">Submit</button> -->
+          </br>
+          <div class="input-field col s6">
+            <input type="text" id="name" name="cust_name_registerform" pattern="^[a-zA-Z][a-zA-Z0-9\s]{1,20}$" required class="validate">
+            <label for="name">Name</label>
+          </div>
+          <div class="input-field col s6">
+            <input type="text" class="validate" id="username" name="cust_username_registerform" required>
+            <label for="username">Username</label>
+          </div>
+          <div class="input-field col s6">
+            <input type="email" id="email" name="cust_email_registerform" class="validate" required>
+            <label for="email">Email</label>
+          </div>
+          <div class="input-field col s6">
+            <input type="text" id="mobileno" name="cust_mobileno_registerform" required class="validate">
+            <label for="mobileno">Mobile No.</label>
+          </div>
+          <div class="input-field col s6">
+            <input type="password" id="password" name="cust_pwd_registerform" required class="validate">
+            <label for="password">Password</label>
+          </div>
+
+          <!-- <h5><span class="label label-default">Confirm Password</span></h5><input type="password" id="cpassowrd" name="cust_pwd_registerform" placeholder="please enter your password again to conform" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,10}$" required> -->
+    </form>
+    <br>
+    <button type="submit" class="btn">Submit</button>
+    <br>
+    <br>
+    <!--
+    <img id="loadingImage" src="C:\Users\gsc-30230\Desktop\socketchat\public\upload\image-1527773393046.jpg" style="visibility: hidden"/>
+          <img src="/public/upload/image-1527774103188.jpg" class="img-responsive"> -->
+    </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+
+
+</body>
+
+</html>

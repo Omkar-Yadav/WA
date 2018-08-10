@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>   <title>AvayaKart</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+            
+            /* Create two equal columns that floats next to each other */
+            .column {
+                float: left;
+                width: 50%;
+                padding: 10px;
+                height: 600px; /* Should be removed. Only for demonstration */
+            }
+            /* Clear floats after the columns */
+            .row:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+            </style>
+<script src="/socket.io/socket.io.js"></script>
+<style type='text/css'>
+    .hi{
+        width:500px;
+        height:500px;
+        overflow: auto;
+    }
+    </style>
+<style>
+    #messageArea {
+        display: none;
+    }
+
+    #footer {
+        width: 500px;
+        height: 600px;
+        overflow: auto
+    }
+</style>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+        <script type="text/javascript">
+
+    </script>
+     <!--Navbar-->
+     <nav class="navbar " style='background-color: #a5d6a7;'>
+            <div class="container-fluid ">
+              <div class="navbar-header">
+               
+              </div>
+              <ul class="nav navbar-nav">
+                <li ><a href="/welcomeexecutive">Home</a></li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                    <li> <a href="#"> welcome</a></li>
+                 <!-- <li><a href="/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li> -->
+                  <li><a href="/logoutexecutive"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+                </ul>
+            </div>
+          </nav>
+</head>
+<body>
+</br></br></br>
+<div class="row container-fluid">
+      <!--  <div class="column card-panel hoverable col-md-2" id="chat1" >  
+                <h6>Online Users</h6>
+                <h6>cases pending</h6>
+        </div> -->
+  
+    <div class="column card-panel hoverable col-md-4"  style="height:2000;" >
+      <h6> Information</h6>
+      <table class="table table-hover ">
+        <thead>
+              <!--  <tr>
+                 <th>update status:</th>
+                    <td>                       
+                             <form id="uploadForm" action="/updatestatw" method="post">   
+                                   <input type="submit" class="btn btn-primary" value="working" />
+                            </form></td>
+                      </tr>  -->
+                <tr>
+                <th>Update Status</th>
+                <td>                       
+                     <form id="uploadForm" action="/updatestat" method="post">   
+                                 
+                           <input type="submit" class="btn btn-primary" value="update" />
+                    </form></td>
+              </tr>
+ 
+            <tr>
+                <th>Status</th>
+                <td><%= stat %></td>
+              </tr>
+            <tr>
+                <th>colorId</th>
+                <td><%= colorid %></td>
+              </tr>
+              <tr>
+                <th>colorcode</th>
+                <td><%= colorcode%></td>
+              </tr> 
+              
+      </table>
+    </div>
+  </div>
+  
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" 
+     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <h2 style="display:none;" id="uid2"><%= uname2 %></h2>
+    <h2 style="display:none;" id="uid"><%= uname1 %></h2>
+    <h2 style="display:none;" id="uid1"><%= ctype %></h2>
+</body>
+</html>
+ 
