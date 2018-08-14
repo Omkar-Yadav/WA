@@ -1,3 +1,47 @@
 
 create table table1(stat varchar(20), colorcode varchar(20), colorid varchar(20));
 select * from table1;
+
+
+
+
+<input type="button" id="mixBut" value="Start" />
+
+css
+#mixBut{ background-color:white;
+  height: 300px;
+  width: 300px;
+  border-radius: 100%;
+}
+
+
+
+js
+
+
+  var mixBut = document.getElementById("mixBut");
+
+  mixBut.addEventListener("click", Start);
+
+  function Start(){
+      console.log("Started");
+      mixBut.removeEventListener("click", Start);
+      mixBut.addEventListener("click", Stop);
+      mixBut.value = "Stop";
+      document.getElementById("mixBut").style.background = "red";
+      document.getElementById("mixBut").style.color = "white";
+    //  $mixBut.css('background-color', 'green');
+  }
+
+  function Stop(){
+      console.log("Stopped");
+      mixBut.removeEventListener("click", Stop);
+      mixBut.addEventListener("click", Start);
+      mixBut.value = "Start";
+      document.getElementById("mixBut").style.background = "green";
+      //$(this).css('background-color', 'red');
+
+      document.getElementById("mixBut").style.color = "white";
+
+  }
+
